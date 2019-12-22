@@ -268,3 +268,12 @@ button {
     background: #222222;
     border-top: 4px solid #01B1EA;
 }
+
+/** alertas **/
+.alert_green {
+    color:green;
+}
+
+.alert_red{
+    color:red;
+}
