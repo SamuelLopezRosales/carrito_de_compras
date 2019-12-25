@@ -17,7 +17,7 @@
                 <ul>
                     
                     <?php if(isset($_SESSION['admin'])): ?>
-                    <li><a href="#">Gestionar Categorias</a></li>
+                    <li><a href="<?=base_url?>Categoria/index">Gestionar Categorias</a></li>
                     <li><a href="#">Gestionar Productos</a></li>
                     <li><a href="#">Gestionar Pedidos</a></li>
                     <?php endif; ?>
@@ -25,6 +25,8 @@
                     <?php if(isset($_SESSION['identity'])): ?>
                     <li><a href="#">Mis pedidos</a></li>
                     <li><a href="<?=base_url?>Usuario/logout">Cerrar sessión</a></li>
+                    <?php else: ?>
+                        <li><a href="<?=base_url?>Usuario/registro">Registrate aquí</a></li>
                     <?php endif; ?>
                 </ul>
 
