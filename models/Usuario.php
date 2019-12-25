@@ -1,14 +1,14 @@
 <?php 
 
 class Usuario{
-    private $id;
-    private $nombre;
-    private $apellidos;
-    private $email;
-    private $password;
-    private $rol;
-    private $imagen;
-    private $db;
+    public $id;
+    public $nombre;
+    public $apellidos;
+    public $email;
+    public $password;
+    public $rol;
+    public $imagen;
+    public $db;
 
     public function __construct(){
         $this->db = Database::connect();
@@ -30,9 +30,9 @@ class Usuario{
         return $this->email;
     }
 
-    function getPassword(){
-        return $this->password;
-    }
+    function getPassword() {
+		return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]);
+	}
 
     function getRol(){
         return $this->rol;
@@ -59,7 +59,7 @@ class Usuario{
     }
 
     function setPassword($password){
-        $this->password = password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
+        $this->password = $password;
     }
 
     function setRol($rol){
@@ -80,5 +80,31 @@ class Usuario{
     }
 
     return $result;
+    }
+
+    public function login(){
+        $result = false;
+        $email = $this->email;
+        $password = $this->password;
+
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+
+        $login = $this->db->query($sql);
+
+       
+
+        if($login && $login->num_rows == 1){
+            // creo objeto usuario con los datos
+            $usuario = $login->fetch_object();
+            
+            // verificar la contraseña
+           $verify = password_verify($password, $usuario->password);
+
+            if($verify){
+               $result = $usuario;
+            }
+        }
+
+        return $result;
     }
 }
