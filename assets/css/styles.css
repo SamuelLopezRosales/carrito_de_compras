@@ -349,7 +349,7 @@ button {
 
 /* tabla */
 table {
-    border: 1px solid #555;
+    border-bottom: 1px solid #ccc;
     text-align: center;
     width: 100%;
 }
@@ -362,3 +362,28 @@ td {
 .thumb {
     width: 100px;
 }
+
+.img_carrito{
+    height: 80px;
+    display: block;
+    margin:10px auto;
+}
+
+/* CARRITO */
+.total-carrito{
+    width: 295px;
+    float: right;
+}
+
+.total-carrito h3{
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+
+.button-pedido{
+    display: block;
+    float: right;
+    width: 100px;
+}
+

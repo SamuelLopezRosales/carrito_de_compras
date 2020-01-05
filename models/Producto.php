@@ -1,16 +1,16 @@
 <?php 
 
 class Producto{
-    private $id;
-    private $categoria_id;
-    private $nombre;
-    private $descripcion;
-    private $precio;
-    private $stock;
-    private $oferta;
-    private $fecha;
-    private $imagen;
-    private $db;
+    public $id;
+    public $categoria_id;
+    public $nombre;
+    public $descripcion;
+    public $precio;
+    public $stock;
+    public $oferta;
+    public $fecha;
+    public $imagen;
+    public $db;
 
     public function __construct(){
         $this->db = Database::connect();
