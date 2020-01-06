@@ -387,3 +387,33 @@ td {
     width: 100px;
 }
 
+.button-delete {
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+.delete-carrito{
+    width: 295px;
+    float: left;
+}
+
+.button-carrito{
+    width: 70px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.updown-unidades{
+    width: 80px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button {
+    display: block;
+    width: 20px;
+    float: left;
+    padding: 2px;
+    margin: 7px;
+}
+
